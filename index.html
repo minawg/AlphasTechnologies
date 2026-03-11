@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphas Technologies - Complete POS Systems for Your Business</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .logo span {
+            color: #1e40af;
+            font-size: 0.9rem;
+            display: block;
+            font-weight: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1e40af;
+        }
+
+        .btn-outline {
+            border: 2px solid #2563eb;
+            color: #2563eb;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f2ff 100%);
+            padding: 4rem 2rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-item:before {
+            content: "✓";
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        /* Certifications */
+        .certifications {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .cert-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .cert-badge {
+            background: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        /* Services/Sections */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e293b;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .service-card ul {
+            list-style: none;
+        }
+
+        .service-card li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card li:before {
+            content: "✓";
+            color: #2563eb;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid #2563eb;
+            transform: scale(1.05);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2563eb;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .price small {
+            font-size: 1rem;
+            color: #64748b;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .pricing-features li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Industries Section */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .industry-item {
+            background: #f8fafc;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .industry-item:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .contact-item a:hover {
+            border-bottom-color: white;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Hardware Specs */
+        .hardware-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+            justify-content: center;
+        }
+
+        .spec {
+            background: #e2e8f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                Alphas Technologies
+                <span>Complete POS Systems</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#industries">Industries</a>
+                <a href="#contact">Contact</a>
+                <a href="https://wa.me/254748465810" class="btn btn-primary">Order Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div>
+                <h1>Complete <span>POS System</span> for Your Business</h1>
+                <h2>Hardware + Software Bundle</h2>
+                <p>Everything you need to run your retail business efficiently</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">Sales & Inventory Management</div>
+                    <div class="feature-item">Receipt Printing</div>
+                    <div class="feature-item">M-PESA & Payment Tracking</div>
+                    <div class="feature-item">Stock Control</div>
+                    <div class="feature-item">Daily & Monthly Reports</div>
+                    <div class="feature-item">Easy to Use Interface</div>
+                </div>
+
+                <div class="hero-buttons" style="margin-top: 2rem;">
+                    <a href="#pricing" class="btn btn-primary">View Plans</a>
+                    <a href="https://wa.me/254748465810" class="btn btn-outline">WhatsApp Us</a>
+                </div>
+
+                <!-- Certifications -->
+                <div class="certifications" style="margin-top: 2rem;">
+                    <p style="margin-bottom: 0.5rem; font-weight: 600;">Certified Quality Hardware:</p>
+                    <div class="cert-badges">
+                        <span class="cert-badge">CE</span>
+                        <span class="cert-badge">FCC</span>
+                        <span class="cert-badge">RoHS</span>
+                        <span class="cert-badge">UL</span>
+                        <span class="cert-badge">CSA</span>
+                        <span class="cert-badge">TÜV</span>
+                        <span class="cert-badge">SÜD</span>
+                        <span class="cert-badge">GS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 10px 15px rgba(0,0,0,0.1);">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Complete POS Hardware</h3>
+                    <div class="hardware-specs">
+                        <span class="spec">TOS Drive</span>
+                        <span class="spec">DISKDR</span>
+                        <span class="spec">1TB</span>
+                        <span class="spec">S/N49</span>
+                    </div>
+                    <ul style="list-style: none;">
+                        <li style="margin: 1rem 0;">✓ Industrial-grade components</li>
+                        <li style="margin: 1rem 0;">✓ CE, FCC, UL certified</li>
+                        <li style="margin: 1rem 0;">✓ 1TB storage capacity</li>
+                        <li style="margin: 1rem 0;">✓ Built for 24/7 operation</li>
+                    </ul>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100' viewBox='0 0 200 100'%3E%3Crect width='200' height='100' fill='%23f1f5f9'/%3E%3Ctext x='20' y='55' font-family='Arial' font-size='14' fill='%23333'%3EPOS Terminal%3C/text%3E%3C/svg%3E" alt="POS Terminal" style="max-width: 100%; margin-top: 1rem; border-radius: 5px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">Complete POS Solutions</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🖥️</div>
+                <h3>POS Hardware</h3>
+                <ul>
+                    <li>Industrial-grade terminals</li>
+                    <li>Receipt printers</li>
+                    <li>Barcode scanners</li>
+                    <li>Cash drawers</li>
+                    <li>1TB storage capacity</li>
+                    <li>CE, FCC, UL certified</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>POS Software</h3>
+                <ul>
+                    <li>Sales management</li>
+                    <li>Inventory tracking</li>
+                    <li>M-PESA integration</li>
+                    <li>Stock control alerts</li>
+                    <li>Daily sales reports</li>
+                    <li>Monthly analytics</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Installation & Support</h3>
+                <ul>
+                    <li>Fast installation</li>
+                    <li>Staff training</li>
+                    <li>Data migration</li>
+                    <li>Reliable support</li>
+                    <li>Software updates</li>
+                    <li>Remote assistance</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section" style="background: #f8fafc;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Monthly Plan</h3>
+                    <div class="price">Ksh 500 <small>/mo</small></div>
+                    <ul class="pricing-features">
+                        <li>✓ Complete POS System</li>
+                        <li>✓ Basic Support</li>
+                        <li>✓ Standard Updates</li>
+                        <li>✓ 30 Days Access</li>
+                    </ul>
+                    <a href="https://wa.me/254748465810?text=I'm%20interested%20in%20the%20Monthly%20POS%20Plan" class="btn btn-primary" style="width: 100%;">Choose Plan</a>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Annual Plan</h3>
+                    <div class="price">Ksh 5,000 <small>/yr</small></div>
+                    <ul class="pricing-features">
+                        <li>✓ Complete POS System</li>
+                        <li>✓ Priority Support</li>
+                        <li>✓ All Updates</li>
+                        <li>✓ Save 17%</li>
+                        <li>✓ 1 Year Access</li>
+                    </ul>
+                    <a href="https://wa.me/254748465810?text=I'm%20interested%20in%20the%20Annual%20POS%20Plan" class="btn btn-primary" style="width: 100%;">Choose Plan</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Lifetime Plan</h3>
+                    <div class="price">Ksh 20,000</div>
+                    <ul class="pricing-features">
+                        <li>✓ Complete POS System</li>
+                        <li>✓ Lifetime Support</li>
+                        <li>✓ All Updates Forever</li>
+                        <li>✓ Best Value</li>
+                        <li>✓ One Time Payment</li>
+                    </ul>
+                    <a href="https://wa.me/254748465810?text=I'm%20interested%20in%20the%20Lifetime%20POS%20Plan" class="btn btn-primary" style="width: 100%;">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="industries" class="section">
+        <h2 class="section-title">Perfect For These Industries</h2>
+        <div class="industries-grid">
+            <div class="industry-item">🏪 Retail Shops</div>
+            <div class="industry-item">🛒 Supermarkets</div>
+            <div class="industry-item">🔨 Hardware Stores</div>
+            <div class="industry-item">🍽️ Restaurants</div>
+            <div class="industry-item">💊 Pharmacies</div>
+            <div class="industry-item">🏬 Mini-Marts</div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-info">
+            <h2>Ready to Upgrade Your Business?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Fast Installation & Reliable Support</p>
+            
+            <div class="contact-details">
+                <div class="contact-item">📞 <a href="tel:0707835281">0707 835 281</a></div>
+                <div class="contact-item">📞 <a href="tel:0748465810">0748 465 810</a></div>
+                <div class="contact-item">✉️ <a href="mailto:alphastechnologiesco@gmail.com">alphastechnologiesco@gmail.com</a></div>
+            </div>
+
+            <a href="https://wa.me/254748465810" class="whatsapp-btn">
+                Order Now via WhatsApp
+            </a>
+
+            <div style="margin-top: 3rem; font-size: 1rem; opacity: 0.8;">
+                <p>📍 Serving businesses across Kenya</p>
+                <p>#POSSystem #BusinessSolutions #RetailPOS</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Alphas Technologies. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Complete POS Systems for Your Business</p>
+    </footer>
+</body>
+</html>
