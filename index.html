@@ -92,6 +92,24 @@
             color: white;
         }
 
+        /* New Download Button Style */
+        .btn-download {
+            background: #10b981;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-download:hover {
+            background: #059669;
+        }
+
+        .btn-download:before {
+            content: "⬇️";
+            font-size: 1.2rem;
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #f0f9ff 0%, #e6f2ff 100%);
@@ -431,6 +449,22 @@
             border-radius: 5px;
             font-size: 0.9rem;
         }
+
+        /* Download Section */
+        .download-section {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .version-info {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -470,6 +504,10 @@
                 <div class="hero-buttons" style="margin-top: 2rem;">
                     <a href="#pricing" class="btn btn-primary">View Plans</a>
                     <a href="https://wa.me/254748465810" class="btn btn-outline">WhatsApp Us</a>
+                    <!-- NEW DOWNLOAD BUTTON HERE -->
+                    <a href="#" onclick="downloadApp()" class="btn btn-download" id="downloadBtn">
+                        Download MyApp.exe
+                    </a>
                 </div>
 
                 <!-- Certifications -->
@@ -505,6 +543,23 @@
                     </ul>
                     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100' viewBox='0 0 200 100'%3E%3Crect width='200' height='100' fill='%23f1f5f9'/%3E%3Ctext x='20' y='55' font-family='Arial' font-size='14' fill='%23333'%3EPOS Terminal%3C/text%3E%3C/svg%3E" alt="POS Terminal" style="max-width: 100%; margin-top: 1rem; border-radius: 5px;">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW DOWNLOAD INFO SECTION -->
+    <section class="section" style="padding-top: 0;">
+        <div class="download-section">
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Try Our POS Software</h3>
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">Download the standalone MyApp.exe application for Windows</p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="#" onclick="downloadApp()" class="btn btn-download" style="font-size: 1.2rem; padding: 1rem 2rem;">
+                    Download MyApp.exe (v2.1.0)
+                </a>
+            </div>
+            <div class="version-info">
+                <p>Version 2.1.0 | 15.2 MB | Windows 10/11</p>
+                <p style="margin-top: 0.5rem;">📦 Includes: POS Interface, Inventory Manager, Reports Dashboard</p>
             </div>
         </div>
     </section>
@@ -637,5 +692,54 @@
         <p>© 2026 Alphas Technologies. All rights reserved.</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">Complete POS Systems for Your Business</p>
     </footer>
+
+    <!-- JavaScript for Download Function -->
+    <script>
+        function downloadApp() {
+            // Create a sample text file as the executable (for demonstration)
+            // In production, replace this with your actual .exe file
+            
+            // Method 1: Direct download link (uncomment and use your actual file URL)
+            // window.location.href = 'path/to/your/MyApp.exe';
+            
+            // Method 2: Create a sample download (for demonstration)
+            const content = `MyApp POS Software
+Version 2.1.0
+Copyright Alphas Technologies 2026
+
+This is a sample executable file.
+In production, replace this with your actual compiled Python application.
+
+To compile your Python app to .exe:
+1. Install pyinstaller: pip install pyinstaller
+2. Compile: pyinstaller --onefile your_script.py
+3. Find the .exe in the dist folder
+`;
+
+            const blob = new Blob([content], { type: 'application/octet-stream' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'MyApp.exe';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            
+            // Show download started message
+            alert('Download started! (Sample file - Replace with actual .exe)');
+        }
+
+        // Optional: Track download clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadBtn = document.getElementById('downloadBtn');
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', function() {
+                    console.log('Download button clicked at: ' + new Date().toISOString());
+                    // You can add analytics tracking here
+                });
+            }
+        });
+    </script>
 </body>
 </html>
