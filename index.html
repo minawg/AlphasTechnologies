@@ -695,15 +695,16 @@
 
     <!-- JavaScript for Download Function -->
     <script>
-        function downloadApp() {
-            // Create a sample text file as the executable (for demonstration)
-            // In production, replace this with your actual .exe file
+       function downloadApp() {
+            // Direct link to your actual .exe file
+            window.location.href = 'https://your-server.com/downloads/MyApp.exe';
             
-            // Method 1: Direct download link (uncomment and use your actual file URL)
-            // window.location.href = 'path/to/your/MyApp.exe';
-            
-            // Method 2: Create a sample download (for demonstration)
-            const content = `MyApp POS Software
+            // Or if you want to track downloads
+            fetch('/api/track-download', { method: 'POST' })
+                .then(() => {
+                    window.location.href = 'https://your-server.com/downloads/MyApp.exe';
+                });
+        }
 Version 2.1.0
 Copyright Alphas Technologies 2026
 
