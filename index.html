@@ -695,16 +695,14 @@
 
     <!-- JavaScript for Download Function -->
     <script>
-       function downloadApp() {
-            // Direct link to your actual .exe file
-            window.location.href = 'https://drive.google.com/file/d/1clybg2RH6ZUOsV6t5gQua4IuYeJ-bQ-4/view?usp=drive_link';
-            
-            // Or if you want to track downloads
-            fetch('/api/track-download', { method: 'POST' })
-                .then(() => {
-                    window.location.href = 'https://drive.google.com/file/d/1clybg2RH6ZUOsV6t5gQua4IuYeJ-bQ-4/view?usp=drive_link';
-                });
-        }
+    function downloadApp() {
+        window.open(
+            'https://drive.google.com/file/d/1clybg2RH6ZUOsV6t5gQua4IuYeJ-bQ-4/view?usp=sharing',
+            '_blank',
+            'noopener,noreferrer'
+        );
+    }
+</script>
 Version 2.1.0
 Copyright Alphas Technologies 2026
 
