@@ -697,12 +697,12 @@
     <script>
        function downloadApp() {
             // Direct link to your actual .exe file
-            window.location.href = 'https://drive.google.com/file/d/1clybg2RH6ZUOsV6t5gQua4IuYeJ-bQ-4/view?usp=drive_link/downloads/MyApp.exe';
+            window.location.href = 'https://drive.google.com/file/d/1clybg2RH6ZUOsV6t5gQua4IuYeJ-bQ-4/view?usp=sharing/downloads/MyApp.exe';
             
             // Or if you want to track downloads
             fetch('/api/track-download', { method: 'POST' })
                 .then(() => {
-                    window.location.href = 'https://drive.google.com/file/d/1clybg2RH6ZUOsV6t5gQua4IuYeJ-bQ-4/view?usp=drive_link/downloads/MyApp.exe';
+                    window.location.href = 'https://drive.google.com/file/d/1clybg2RH6ZUOsV6t5gQua4IuYeJ-bQ-4/view?usp=sharing/downloads/MyApp.exe';
                 });
         }
 Version 2.1.0
